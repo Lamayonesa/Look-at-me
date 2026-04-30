@@ -12,7 +12,7 @@ body{
 
 
 .header hr {
-    width: 40%;
+    flex: 1;
     border: none;
     height: 2px;
     background: linear-gradient(to right, rgb(181, 176, 176), black);
