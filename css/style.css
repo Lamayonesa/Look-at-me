@@ -1,3 +1,8 @@
+
+* {
+    box-sizing: border-box;
+}
+
 body {
     background: linear-gradient(to right, black, rgb(181, 176, 176));
     display: flex;
@@ -11,28 +16,55 @@ body {
     display: flex;
     align-items: center;
     gap: 10px;
-    font-family: Arial, sans-serif;
+    padding: 10px 20px;
 }
 
 .header hr {
     flex: 1;
     border: none;
     height: 2px;
-    background: linear-gradient(to right, rgb(181, 176, 176), black);
+    background: rgb(181, 176, 176);
+}
+
+.header h1 {
+    white-space: nowrap;
 }
 
 .down {
     text-align: center;
     font-size: large;
+    margin: 20px 0 30px;
+}
+
+.contenedor-principal {
+    display: grid;
+    grid-template-columns: 1fr 400px 1fr;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+.left,
+.right {
+    color: white;
+    padding: 10px;
+}
+
+.left {
+    text-align: right;
+}
+
+.right {
+    text-align: left;
 }
 
 .card {
-    width: min(400px, 90%);
-    box-sizing: border-box;
+    width: 100%;
     min-height: 350px;
-    margin: 30px auto;
+    margin: 0;
     padding: 15px;
     background-color: white;
+    color: black;
     border-radius: 10px;
     display: flex;
     flex-direction: column;
@@ -68,6 +100,7 @@ body {
 footer {
     margin-top: auto;
     padding: 10px;
+    text-align: center;
 }
 
 footer p {
@@ -75,9 +108,18 @@ footer p {
     font-family: Arial, Helvetica, sans-serif;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 700px) {
+    .contenedor-principal {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .left,
+    .right {
+        text-align: center;
+    }
+
     .card {
-        width: 90%;
         min-height: 0;
     }
 
