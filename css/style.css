@@ -63,12 +63,87 @@ body {
     min-height: 350px;
     margin: 0;
     padding: 15px;
-    background-color: white;
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 16px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
     color: black;
-    border-radius: 10px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+}
+
+.card {
+    width: 100%;
+    min-height: 350px;
+    margin: 0;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 16px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+    color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    border: 1px solid transparent;
+    background: linear-gradient(
+        120deg,
+        transparent 30%,
+        rgba(255, 255, 255, 0.7),
+        transparent 70%
+    ) border-box;
+    mask: linear-gradient(#fff 0 0) padding-box,
+          linear-gradient(#fff 0 0);
+    mask-composite: exclude;
+    -webkit-mask-composite: xor;
+    background-size: 200% 200%;
+    animation: border-shine 5s linear infinite;
+    pointer-events: none;
+}
+
+.card::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.15),
+        transparent
+    );
+    transform: skewX(-20deg);
+    animation: shine 5s ease-in-out infinite;
+    pointer-events: none;
+}
+
+@keyframes shine {
+    0%, 15% { left: -100%; }
+    65%, 100% { left: 150%; }
+}
+
+@keyframes border-shine {
+    0% { background-position: 100% 0; }
+    100% { background-position: -100% 100%; }
 }
 
 .card-title {
