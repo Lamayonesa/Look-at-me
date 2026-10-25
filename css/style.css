@@ -1,10 +1,22 @@
+h1{
+    color: white;
+    font-family: 'Rubik Bubbles', system-ui;
+    
+
+}
+
+p{
+    color: white;
+    font-family: 'Rubik Bubbles', system-ui;
+}
+
 
 * {
     box-sizing: border-box;
 }
 
 body {
-    background: linear-gradient(to right, black, rgb(181, 176, 176));
+    background: black;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
@@ -58,26 +70,8 @@ body {
     text-align: left;
 }
 
-.card {
-    width: 100%;
-    min-height: 350px;
-    margin: 0;
-    padding: 15px;
-    background: rgba(255, 255, 255, 0.12);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border: 1px solid rgba(255, 255, 255, 0.25);
-    border-radius: 16px;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
-    color: black;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: relative;
-    overflow: hidden;
-    isolation: isolate;
-}
 
+/* Card Style*/
 .card {
     width: 100%;
     min-height: 350px;
@@ -135,7 +129,39 @@ body {
     animation: shine 5s ease-in-out infinite;
     pointer-events: none;
 }
+/* Button Style */
+.button {
+    position: relative;
+    overflow: hidden;
+    padding: 10px 20px;
+    font-size: medium;
+    color: white;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
 
+}
+
+.button::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.15),
+        transparent
+    );
+    transform: skewX(-20deg);
+    animation: shine 5s ease-in-out infinite;
+    pointer-events: none;
+}
+ /* Animations */
 @keyframes shine {
     0%, 15% { left: -100%; }
     65%, 100% { left: 150%; }
@@ -182,7 +208,7 @@ footer p {
     color: rgb(230, 223, 223);
     font-family: Arial, Helvetica, sans-serif;
 }
-
+/* Responsive Design */
 @media (max-width: 700px) {
     .contenedor-principal {
         grid-template-columns: 1fr;
