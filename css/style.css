@@ -211,6 +211,16 @@ footer p {
     color: rgb(230, 223, 223);
     font-family: Arial, Helvetica, sans-serif;
 }
+
+/* Poki Div Style */
+.poki {
+    position: absolute;
+    top: 30vh;
+    left: 1vw;
+    width: clamp(30px, 5vw, 80px);
+    height: clamp(30px, 5vw, 80px);
+}
+
 /* Responsive Design */
 @media (max-width: 700px) {
     .contenedor-principal {
