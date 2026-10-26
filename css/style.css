@@ -215,10 +215,10 @@ footer p {
 /* Poki Div Style */
 .poki {
     position: absolute;
-    top: 30vh;
-    left: 1vw;
-    width: clamp(30px, 5vw, 80px);
-    height: clamp(30px, 5vw, 80px);
+    top: 10px;
+    left: 10px;
+    width: 50px;
+    height: 50px;
 }
 
 /* Responsive Design */
